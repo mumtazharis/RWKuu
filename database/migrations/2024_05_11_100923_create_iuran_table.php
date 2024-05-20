@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('iuran', function (Blueprint $table) {
             $table->id('iuran_id')->primary();
             $table->unsignedBigInteger('kegiatan_id');
-            $table->bigInteger('nik');
+            $table->bigInteger('nomor_kk');
             $table->double('nominal');
             $table->timestamps();
         });

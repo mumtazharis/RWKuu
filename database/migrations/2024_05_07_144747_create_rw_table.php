@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('rw', function (Blueprint $table) {
             $table->id('rw_id')->primary();
-            $table->string('kode_rw', 3);
-            $table->bigInteger('nik_ketua_rw');
+            $table->string('kode_rw', 6);
+            $table->bigInteger('nik_ketua_rw')->nullable();
             $table->timestamps();
 
             

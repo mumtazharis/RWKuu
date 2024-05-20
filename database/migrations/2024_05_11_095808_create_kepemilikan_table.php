@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('kepemilikan', function (Blueprint $table) {
             $table->id('kepemilikan_id')->primary();
-            $table->bigInteger('nik')->unique();
             $table->bigInteger('penghasilan');
             $table->smallInteger('keluarga_ditanggung');
             $table->integer('pajak_motor');

@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_warga', function (Blueprint $table) {
-            $table->id('data_warga_id')->primary();
-            $table->bigInteger('nik')->unique();
-            $table->bigInteger('nomor_kk');
+        Schema::create('warga', function (Blueprint $table) {
+            $table->bigInteger('nik')->primary();
+            $table->bigInteger('nomor_kk')->nullable();
             $table->string('nama',100);
             $table->string('tempat_lahir',20);
             $table->date('tanggal_lahir');
@@ -29,6 +28,9 @@ return new class extends Migration
             $table->string('provinsi', 50);
             $table->string('agama', 15);
             $table->string('pekerjaan', 20);
+            $table->enum('status_kependudukan', ['warga', 'meninggal', 'pindah', 'pendatang']);
+
+            $table->timestamps();
         });
     }
 
